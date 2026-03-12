@@ -1,15 +1,5 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const uploadDir = path.resolve(__dirname, "../../uploads");
-
 export const ensureUploadDir = () => {
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-  }
+  // Cloudinary handles storage now, no need for local upload directory
 };
 
 export const uploadProjectImage = (req, res, next) => {
@@ -19,12 +9,12 @@ export const uploadProjectImage = (req, res, next) => {
       throw new Error("No image uploaded.");
     }
 
-    const fileUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+    // req.file.path is provided by multer-storage-cloudinary and contains the secure URL
     res.status(201).json({
       success: true,
       data: {
         filename: req.file.filename,
-        url: fileUrl
+        url: req.file.path
       }
     });
   } catch (error) {

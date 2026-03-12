@@ -1,21 +1,10 @@
-import path from "path";
 import { Router } from "express";
 import multer from "multer";
+import { storage } from "../config/cloudinary.js";
 import { uploadProjectImage } from "../controllers/uploadController.js";
 import { requireAdmin } from "../middleware/adminAuth.js";
 
 const router = Router();
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads");
-  },
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname || "").toLowerCase();
-    const baseName = path.basename(file.originalname || "project", ext).replace(/[^a-zA-Z0-9-_]/g, "-");
-    cb(null, `${Date.now()}-${baseName}${ext}`);
-  }
-});
 
 const imageFilter = (req, file, cb) => {
   const allowed = ["image/jpeg", "image/png", "image/webp", "image/jpg"];

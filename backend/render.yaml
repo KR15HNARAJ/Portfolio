@@ -31,3 +31,9 @@ services:
         sync: false
       - key: CONTACT_RECEIVER_EMAIL
         sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false

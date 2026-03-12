@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { apiRequest } from "../utils/api";
+import { apiRequest, API_BASE_URL } from "../utils/api";
 
 const emptyProject = {
   title: "",
@@ -131,7 +131,7 @@ const AdminPage = () => {
       const formData = new FormData();
       formData.append("image", projectImageFile);
 
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/upload/project-image`, {
+      const response = await fetch(`${API_BASE_URL}/api/upload/project-image`, {
         method: "POST",
         headers: {
           "x-admin-key": adminKey
