@@ -1,0 +1,26 @@
+{
+  "name": "krishnaraj-portfolio-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "seed:skills": "node src/seed/seedSkills.js",
+    "seed:projects": "node src/seed/seedProjects.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "multer": "^1.4.5-lts.1",
+    "mongoose": "^8.6.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
