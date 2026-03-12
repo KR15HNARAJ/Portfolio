@@ -490,6 +490,7 @@ a {
   gap: 16px;
   width: max-content;
   animation: marquee-scroll 25s linear infinite;
+  padding-top: 5px;
 }
 
 .skills-marquee:hover .skills-marquee-track {
