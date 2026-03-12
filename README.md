@@ -1,127 +1,133 @@
-# Krishnaraj Portfolio (MERN)
+# Portfolio Website
 
-Modern, responsive full-stack developer portfolio built with:
-- Frontend: React, React Router, plain CSS, Framer Motion
-- Backend: Node.js, Express, MongoDB (Mongoose)
+A full-stack portfolio website built with React on the frontend and Node.js/Express on the backend. Features an admin panel for managing projects, skills, and contact messages.
 
-## Folder Structure
+## Features
 
-```text
+- **Responsive Design**: Modern, mobile-friendly interface
+- **Admin Panel**: Secure admin interface for content management
+- **Project Showcase**: Display personal projects with descriptions and links
+- **Skills Section**: Showcase technical skills and expertise
+- **Contact Form**: Allow visitors to send messages
+- **Email Notifications**: Automated email responses for contact submissions
+- **File Upload**: Support for uploading project images and assets
+- **Theme Toggle**: Light/dark mode support
+
+## Tech Stack
+
+### Frontend
+- React 18
+- Vite (build tool)
+- CSS3 with custom styling
+- React Router for navigation
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (database)
+- JWT for authentication
+- Multer for file uploads
+- Nodemailer for email service
+
+## Project Structure
+
+```
 portfolio/
-  backend/
-    src/
-      config/
-      controllers/
-      middleware/
-      models/
-      routes/
-      services/
-      app.js
-      server.js
-    .env.example
-    package.json
-  frontend/
-    public/
-    src/
-      components/
-      data/
-      hooks/
-      sections/
-      App.jsx
-      index.css
-      main.jsx
-    .env.example
-    index.html
-    package.json
-    vite.config.js
+├── backend/          # Express.js API server
+│   ├── src/
+│   │   ├── controllers/    # Route handlers
+│   │   ├── models/         # MongoDB schemas
+│   │   ├── routes/         # API endpoints
+│   │   ├── middleware/     # Custom middleware
+│   │   ├── services/       # Business logic
+│   │   └── seed/           # Database seed data
+│   └── uploads/            # File uploads directory
+├── frontend/         # React application
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page components
+│   │   ├── sections/       # Section components
+│   │   ├── hooks/          # Custom React hooks
+│   │   └── utils/          # Utility functions
+│   └── public/             # Static assets
+└── README.md
 ```
 
-## Run Locally
+## Getting Started
 
-### 1) Backend
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB
+- npm or yarn
 
+### Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd portfolio
+```
+
+2. Install backend dependencies
 ```bash
 cd backend
 npm install
-cp .env.example .env
-npm run dev
 ```
 
-Backend default: `http://localhost:5000`
-Set `ADMIN_KEY` in `backend/.env` for admin panel authentication.
-Project images uploaded from admin are served from: `http://localhost:5000/uploads/<filename>`
-
-### 2) Frontend
-
+3. Install frontend dependencies
 ```bash
-cd frontend
+cd ../frontend
 npm install
-cp .env.example .env
+```
+
+4. Set up environment variables
+   - Copy `.env.example` to `.env` in both backend and frontend directories
+   - Fill in your MongoDB connection string, JWT secret, email credentials, etc.
+
+5. Start the development servers
+```bash
+# Backend (from backend directory)
+npm run dev
+
+# Frontend (from frontend directory)
 npm run dev
 ```
 
-Frontend default: `http://localhost:5173`
-Admin panel: `http://localhost:5173/admin`
+The application will be available at:
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:5000
 
-## Seed Skills
+## API Endpoints
 
-This seeds your configured skills list into MongoDB.
+### Public Routes
+- `GET /api/projects` - Get all projects
+- `GET /api/skills` - Get all skills
+- `POST /api/contact` - Send contact message
 
-```bash
-cd backend
-npm run seed:skills
-```
+### Admin Routes (Protected)
+- `POST /api/admin/login` - Admin authentication
+- `GET /api/admin/projects` - Get projects (admin)
+- `POST /api/admin/projects` - Create project
+- `PUT /api/admin/projects/:id` - Update project
+- `DELETE /api/admin/projects/:id` - Delete project
+- Similar endpoints for skills and contact messages
 
-## Seed Projects
+## Deployment
 
-This seeds your project list into MongoDB.
+The project is configured for deployment on:
+- **Frontend**: Vercel
+- **Backend**: Render
 
-```bash
-cd backend
-npm run seed:projects
-```
+Deployment configurations are included in `vercel.json` and `render.yaml` files.
 
-## Deploy To Render + MongoDB Atlas
+## Contributing
 
-This repo now includes a Render Blueprint file at `render.yaml` to deploy both:
-- `krishnaraj-portfolio-api` (Node backend)
-- `krishnaraj-portfolio-web` (Vite static frontend)
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-### 1) Prepare MongoDB Atlas
+## License
 
-1. Create a cluster in Atlas.
-2. Create a DB user and password.
-3. In Atlas Network Access, allow Render IP access (for quick start you can allow `0.0.0.0/0` and tighten later).
-4. Copy your connection string and set it as `MONGO_URI` in Render backend env vars.
-
-### 2) Deploy On Render
-
-1. Push this repo to GitHub.
-2. In Render, click New + > Blueprint and select this repo.
-3. Render detects `render.yaml` and creates backend + frontend services.
-4. Set required env vars:
-
-Backend (`krishnaraj-portfolio-api`):
-- `MONGO_URI` = your Atlas connection string
-- `ADMIN_KEY` = strong secret key for `/admin`
-- `CLIENT_URLS` = comma-separated allowed frontend URLs (for example: `https://krishnaraj-portfolio-web.onrender.com,http://localhost:5173`)
-- `SMTP_*` and `CONTACT_RECEIVER_EMAIL` only if contact email sending is enabled
-
-Frontend (`krishnaraj-portfolio-web`):
-- `VITE_API_BASE_URL` = your backend URL (example: `https://krishnaraj-portfolio-api.onrender.com`)
-
-### 3) Verify Production
-
-1. Open backend health URL: `/api/health`
-2. Open frontend URL and test:
-- Projects/skills loading
-- Contact form submit
-- Admin login + create/edit/delete actions
-
-### Important Note About Image Uploads
-
-Project image uploads are currently stored on backend local disk (`/uploads`). On Render free web services this storage is ephemeral and can be lost on redeploy/restart.
-
-For production, use one of these:
-- Store image URLs from Cloudinary/S3 in admin form
-- Add persistent external object storage for uploads
+This project is licensed under the MIT License.
