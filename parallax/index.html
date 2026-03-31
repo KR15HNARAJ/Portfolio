@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A parallax scrolling storytelling experience — journey through cosmos, ocean depths, and ancient forests."
+    />
+    <title>Parallax Stories — A Journey Through Worlds</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__logo" aria-label="Site logo">✦ Parallax Stories</div>
+      <button
+        class="nav__menu-btn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#cosmos" class="nav__link">Cosmos</a></li>
+        <li><a href="#ocean" class="nav__link">Ocean</a></li>
+        <li><a href="#forest" class="nav__link">Forest</a></li>
+        <li><a href="#city" class="nav__link">City</a></li>
+        <li><a href="#epilogue" class="nav__link">Epilogue</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+      <!-- ── HERO ────────────────────────────────────────────── -->
+      <section class="hero" aria-label="Hero section">
+        <!-- Parallax layers -->
+        <div class="parallax-layer parallax-layer--stars" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--nebula" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--planets" aria-hidden="true">
+          <div class="planet planet--large"></div>
+          <div class="planet planet--small"></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal">Begin Your Journey</p>
+          <h1 class="hero__title reveal">
+            <span class="hero__title-line">Stories</span>
+            <span class="hero__title-line hero__title-line--accent">Beyond</span>
+            <span class="hero__title-line">Reality</span>
+          </h1>
+          <p class="hero__subtitle reveal">
+            Scroll down to travel through worlds of wonder — from the vastness of the cosmos to the
+            whisper of ancient forests.
+          </p>
+          <a href="#cosmos" class="btn btn--primary reveal" aria-label="Start the journey">
+            Begin the Journey
+          </a>
+        </div>
+
+        <div class="hero__scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="hero__scroll-arrow"></div>
+        </div>
+      </section>
+
+      <!-- ── ACT 1 — COSMOS ──────────────────────────────────── -->
+      <section class="story-section story-section--cosmos" id="cosmos" aria-label="Cosmos section">
+        <div class="parallax-layer parallax-layer--cosmos-bg" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--cosmos-mid" aria-hidden="true">
+          <div class="star-cluster star-cluster--1" aria-hidden="true"></div>
+          <div class="star-cluster star-cluster--2" aria-hidden="true"></div>
+        </div>
+
+        <div class="story-section__content">
+          <div class="story-card reveal">
+            <span class="story-card__chapter">Chapter I</span>
+            <h2 class="story-card__title">The Infinite Cosmos</h2>
+            <p class="story-card__text">
+              In the beginning, there was silence — and then the universe exhaled. Billions of
+              galaxies bloomed like flowers across an ocean of darkness, each one a story yet to be
+              told.
+            </p>
+            <p class="story-card__text">
+              Among the swirling nebulae and ancient light, a single spark of curiosity ignited.
+              Something was watching. Something was wondering.
+            </p>
+          </div>
+
+          <div class="stats-row reveal">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="2000">0</span>
+              <span class="stat-card__unit">Billion</span>
+              <span class="stat-card__label">Galaxies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="13">0</span>
+              <span class="stat-card__unit">Billion</span>
+              <span class="stat-card__label">Light Years</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="99">0</span>
+              <span class="stat-card__unit">%</span>
+              <span class="stat-card__label">Mystery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ACT 2 — OCEAN ───────────────────────────────────── -->
+      <section class="story-section story-section--ocean" id="ocean" aria-label="Ocean section">
+        <div class="parallax-layer parallax-layer--ocean-bg" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--waves" aria-hidden="true">
+          <div class="wave wave--1"></div>
+          <div class="wave wave--2"></div>
+          <div class="wave wave--3"></div>
+        </div>
+        <div class="parallax-layer parallax-layer--bubbles" aria-hidden="true">
+          <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+          <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+        </div>
+
+        <div class="story-section__content story-section__content--right">
+          <div class="story-card story-card--glass reveal">
+            <span class="story-card__chapter">Chapter II</span>
+            <h2 class="story-card__title">The Deep Ocean</h2>
+            <p class="story-card__text">
+              Far below the sun-kissed surface, a world of silence and wonder unfolds. Bioluminescent
+              creatures drift like living constellations, painting trails of blue light in the
+              absolute darkness.
+            </p>
+            <p class="story-card__text">
+              Here, pressure and cold conspire to create life forms that defy imagination — creatures
+              that have never seen the sky, yet thrive in their own perfect world.
+            </p>
+          </div>
+
+          <div class="feature-list reveal">
+            <div class="feature-item">
+              <span class="feature-item__icon" aria-hidden="true">🌊</span>
+              <div>
+                <strong>Surface Waves</strong>
+                <p>Where wind meets water, stories begin.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-item__icon" aria-hidden="true">🐠</span>
+              <div>
+                <strong>Mid Ocean</strong>
+                <p>Coral kingdoms teeming with colour.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-item__icon" aria-hidden="true">🌑</span>
+              <div>
+                <strong>The Abyss</strong>
+                <p>11 km of untouched mystery below.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ACT 3 — FOREST ──────────────────────────────────── -->
+      <section class="story-section story-section--forest" id="forest" aria-label="Forest section">
+        <div class="parallax-layer parallax-layer--forest-bg" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--forest-mid" aria-hidden="true">
+          <div class="tree tree--1" aria-hidden="true"></div>
+          <div class="tree tree--2" aria-hidden="true"></div>
+          <div class="tree tree--3" aria-hidden="true"></div>
+          <div class="tree tree--4" aria-hidden="true"></div>
+        </div>
+        <div class="parallax-layer parallax-layer--forest-fg" aria-hidden="true">
+          <div class="leaf-particle" aria-hidden="true"></div>
+          <div class="leaf-particle" aria-hidden="true"></div>
+          <div class="leaf-particle" aria-hidden="true"></div>
+        </div>
+
+        <div class="story-section__content">
+          <div class="story-card story-card--wood reveal">
+            <span class="story-card__chapter">Chapter III</span>
+            <h2 class="story-card__title">The Ancient Forest</h2>
+            <p class="story-card__text">
+              Ten thousand years of silence, broken only by wind and rain. Ancient trees stand as
+              witnesses to empires rising and falling — their roots intertwined in a vast underground
+              network, whispering secrets.
+            </p>
+            <p class="story-card__text">
+              Every fallen leaf is a page. Every ring inside a trunk, a year of stories. In the
+              forest, nothing is ever truly lost — it simply becomes part of something greater.
+            </p>
+          </div>
+
+          <div class="timeline reveal">
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <strong>1 Year</strong>
+                <p>A seedling breaks through soil.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <strong>100 Years</strong>
+                <p>The tree shelters its first generation.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <strong>1,000 Years</strong>
+                <p>Living witness to history.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <strong>10,000 Years</strong>
+                <p>An ancient elder among its kin.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── ACT 4 — CITY ────────────────────────────────────── -->
+      <section class="story-section story-section--city" id="city" aria-label="City section">
+        <div class="parallax-layer parallax-layer--city-bg" aria-hidden="true"></div>
+        <div class="parallax-layer parallax-layer--skyline" aria-hidden="true">
+          <div class="building building--1" aria-hidden="true"></div>
+          <div class="building building--2" aria-hidden="true"></div>
+          <div class="building building--3" aria-hidden="true"></div>
+          <div class="building building--4" aria-hidden="true"></div>
+          <div class="building building--5" aria-hidden="true"></div>
+        </div>
+
+        <div class="story-section__content story-section__content--center">
+          <div class="story-card story-card--neon reveal">
+            <span class="story-card__chapter">Chapter IV</span>
+            <h2 class="story-card__title">The Living City</h2>
+            <p class="story-card__text">
+              As night falls, the city awakens in a blaze of neon and possibility. Millions of lives
+              intersect — each light in each window, a universe unto itself.
+            </p>
+            <p class="story-card__text">
+              The city never sleeps. It hums, it breathes, it dreams in electric colour. Every
+              street corner holds a story; every face, a lifetime of journeys yet to be shared.
+            </p>
+          </div>
+
+          <div class="card-grid reveal">
+            <div class="mini-card">
+              <span class="mini-card__icon" aria-hidden="true">🏙️</span>
+              <strong>Architecture</strong>
+              <p>Glass and steel reaching for the stars.</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__icon" aria-hidden="true">🌃</span>
+              <strong>Night Life</strong>
+              <p>The city's heartbeat after dark.</p>
+            </div>
+            <div class="mini-card">
+              <span class="mini-card__icon" aria-hidden="true">🚇</span>
+              <strong>Movement</strong>
+              <p>Millions of stories in motion.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EPILOGUE ─────────────────────────────────────────── -->
+      <section class="epilogue" id="epilogue" aria-label="Epilogue section">
+        <div class="parallax-layer parallax-layer--epilogue" aria-hidden="true"></div>
+        <div class="epilogue__content">
+          <p class="epilogue__label reveal">Epilogue</p>
+          <h2 class="epilogue__title reveal">Every Story Connects</h2>
+          <p class="epilogue__text reveal">
+            From the silence of the cosmos to the roar of the city — every world, every creature,
+            every story is woven from the same thread. We are all part of the same unfolding
+            narrative.
+          </p>
+          <p class="epilogue__text reveal">
+            The journey doesn't end here. It continues in every breath, every heartbeat, every
+            curious glance at the night sky.
+          </p>
+          <div class="epilogue__actions reveal">
+            <a href="#" class="btn btn--primary">Start Over</a>
+            <a href="#cosmos" class="btn btn--outline">Read Again</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p>
+        Crafted with ✦ and vanilla web technologies &mdash;
+        <a href="https://github.com/KR15HNARAJ/Portfolio" rel="noopener noreferrer">
+          View Source
+        </a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
